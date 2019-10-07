@@ -132,7 +132,51 @@ def exercise01():
 '''
 
     # ------ Place code below here \/ \/ \/ ------
+    class Box:
+        def __init__(self, length, width):
+        self.__length=width  # private attribute 
+        self.__length=width # private attribute
 
+        #Getter for width
+        def get_width(self):
+            return self.__width
+        
+        #Getter for length
+        def get_length(self, length):
+            return self.__length
+
+        def render():
+            # Print horizontally the first row of the box
+            # TODO: Add spaces between these asterix
+            print('*'*self.width)
+            # Print the two sides of box, separated by spaces with space length equal to width - two asterix from both sides of the box
+            for i in range(self.length-2):
+                print('*' + ' '*(self.width-2) + '*')
+            # Print horizontally the last row of the box
+            # TODO: Add spaces between these asterix
+            print('*'*self.width)
+
+        def invert():
+            tempWidth = self.width
+            self.width = self.length
+            self.length = tempWidth
+
+        def getArea():
+            return self.length*self.width
+
+        def getPerimeter():
+            return 2 * (self.width + self.height)
+
+        def double():
+            tempW = self.width
+            self.width = self.width*tempW
+
+        def __eq__(Box b1, Box b2):
+            if b1.width == b2.width and b1.length == b2.length:
+                return True
+            else:
+                return False
+    
     box1 = Box(5,10)
     box2 = Box(3,4)
     box3 = Box(5,10)
