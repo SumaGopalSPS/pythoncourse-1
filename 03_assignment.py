@@ -19,19 +19,21 @@ import csv, json, math, pandas as pd, requests, unittest, uuid
 
 class Box:
     def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    #self.__length=width  # private attribute 
-    #self.__length=width # private attribute
+        # Private attribute for length
+        self.__length = length
+        
+        # Private attribute for width
+        self.__width = width
 
-    #Getter for width
+    # Getter for width
     def get_width(self):
         return self.__width
     
-    #Getter for length
+    # Getter for length
     def get_length(self, length):
         return self.__length
 
+    # Prints hollow box of asterix
     def render(self):
         # Print horizontally the first row of the box
         # TODO: Add spaces between these asterix
@@ -43,18 +45,21 @@ class Box:
         # TODO: Add spaces between these asterix
         print('*'*self.width)
 
+    # Inverts length and width
     def invert(self):
         tempWidth = self.width
         self.width = self.length
         self.length = tempWidth
 
+    # Returns the area of the box
     def getArea(self):
         return self.length*self.width
 
+    # Returns the perimeter of the box
     def getPerimeter(self):
         return 2 * (self.width + self.height)
 
-    # Doubles the width of the Box. I created a temporary variable to avoid complication in class attributes
+    # Doubles the width of the Box: 2 x width. I created a temporary variable to avoid complication in class attributes
     def double(self):
         self.width = self.width*2
 
@@ -73,10 +78,16 @@ class Box:
         other.length = other.length + tempL
         other.width = other.width + tempW
 
-    # Returns hypotenuse 
+    # Returns hypotenuse diagonal of the box
     def get_hyp(self):
         return math.hypot(self.length, self.width)
 
+#class MangoDB:
+    #print(uuid.uuid4())
+
+    # TODO: Display All Collections
+    #def display_all_collections():
+        
 # ------ Create your classes here /\ /\ /\ ------
 
 
@@ -157,9 +168,7 @@ def exercise02():
     test_scores = [99,89,88,75,66,92,75,94,88,87,88,68,51]
 
     # ------ Place code below here \/ \/ \/ ------
-
-
-
+    
     # ------ Place code above here /\ /\ /\ ------
 
 def exercise01():
