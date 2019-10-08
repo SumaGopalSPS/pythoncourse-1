@@ -17,77 +17,9 @@ import csv, json, math, pandas as pd, requests, unittest, uuid
 
 # Box class declaration below here
 
-class Box:
-    def __init__(self, length, width):
-        # Private attribute for length
-        self.__length = length
-        
-        # Private attribute for width
-        self.__width = width
-
-    # Getter for width
-    def get_width(self):
-        return self.__width
     
-    # Getter for length
-    def get_length(self, length):
-        return self.__length
 
-    # Prints hollow box of asterix
-    def render(self):
-        # Print horizontally the first row of the box
-        # TODO: Add spaces between these asterix
-        print('*'*self.width)
-        # Print the two sides of box, separated by spaces with space length equal to width - two asterix from both sides of the box
-        for i in range(self.length-2):
-            print('*' + ' '*(self.width-2) + '*')
-        # Print horizontally the last row of the box
-        # TODO: Add spaces between these asterix
-        print('*'*self.width)
 
-    # Inverts length and width
-    def invert(self):
-        tempWidth = self.width
-        self.width = self.length
-        self.length = tempWidth
-
-    # Returns the area of the box
-    def getArea(self):
-        return self.length*self.width
-
-    # Returns the perimeter of the box
-    def getPerimeter(self):
-        return 2 * (self.width + self.height)
-
-    # Doubles the width of the Box: 2 x width. I created a temporary variable to avoid complication in class attributes
-    def double(self):
-        self.width = self.width*2
-
-    # Allows to test equality based on width and length, between two Box objects
-    def __eq__(self, other):
-        return (self.width == other.width and self.length == other.length)
-
-    # Print Box class dimensions
-    def print_dim(self):
-        print('Length: ' + str(self.length) + ', Width: ' + str(self.width))
-
-    # Takes a Box and increases its length and width by the dimensions of the other box
-    def combine(self, other):
-        tempL = self.length
-        tempW = self.width
-        other.length = other.length + tempL
-        other.width = other.width + tempW
-
-    # Returns hypotenuse diagonal of the box
-    def get_hyp(self):
-        return math.hypot(self.length, self.width)
-
-#class MangoDB:
-    #print(uuid.uuid4())
-
-    # TODO: Display All Collections
-    #def display_all_collections():
-        
 # ------ Create your classes here /\ /\ /\ ------
 
 
@@ -168,7 +100,9 @@ def exercise02():
     test_scores = [99,89,88,75,66,92,75,94,88,87,88,68,51]
 
     # ------ Place code below here \/ \/ \/ ------
-    
+
+
+
     # ------ Place code above here /\ /\ /\ ------
 
 def exercise01():
@@ -198,24 +132,18 @@ def exercise01():
 '''
 
     # ------ Place code below here \/ \/ \/ ------
-            
+
     box1 = Box(5,10)
     box2 = Box(3,4)
     box3 = Box(5,10)
-    
-    box1.print_dim()
-    box2.print_dim()
-    box3.print_dim()
-    
-    print(box1==box2)
-    print(box1==box3)
-    
+    #print(box1==box2)
+    #print(box1==box3)
     box1.combine(box3)
     box2.double()
     box1.combine(box2)
-    for d in box2.get_dim():
-        print(d)
-    print(box2.get_hypot())
+    #for d in box2.get_dim():
+    #    print(d)
+    #print(box2.get_hypot())
 
 
     # ------ Place code above here /\ /\ /\ ------
