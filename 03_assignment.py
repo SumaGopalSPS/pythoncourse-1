@@ -198,10 +198,6 @@ def exercise01():
 '''
 
     # ------ Place code below here \/ \/ \/ ------
-
-    
-
-        
             
     box1 = Box(5,10)
     box2 = Box(3,4)
